@@ -22,7 +22,7 @@ Update `JSON.parse` to provide reviver functions with more arguments, primarily 
 
 ## Illustrative examples
 ```js
-const tooBigForNumber = BigInt(Number.MAX_SAFE_INTEGER) + 2n;
+const tooBigForNumber = BigInt(Number.MAX_SAFE_INTEGER) + 2;
 const intToBigInt = (key, val, src) => typeof val === "number" && val % 1 === 0 ? BigInt(src) : val;
 const roundTripped = JSON.parse(String(tooBigForNumber), intToBigInt);
 tooBigForNumber === roundTripped;
